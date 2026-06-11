@@ -1,21 +1,23 @@
-package dao;
-
+import java.io.FileInputStream;
+import java.util.Properties;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class Conexao {
 
-    private static final String URL =
-            "jdbc:mysql://localhost:3306/estoque_db";
-
-    private static final String USUARIO = "root";
-    private static final String SENHA = "123456";
-
     public static Connection conectar() {
         try {
-            return DriverManager.getConnection(URL, USUARIO, SENHA);
+            Properties prop = new Properties();
+            prop.load(new FileInputStream("config.properties"));
+
+            String url = prop.getProperty("db.url");
+            String usuario = prop.getProperty("db.user");
+            String senha = prop.getProperty("db.password");
+
+            return DriverManager.getConnection(url, usuario, senha);
+
         } catch (Exception e) {
-            System.out.println("Erro ao conectar: " + e.getMessage());
+            System.out.println("Erro: " + e.getMessage());
             return null;
         }
     }

@@ -1,23 +1,28 @@
-import java.io.FileInputStream;
-import java.util.Properties;
+package dao;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class Conexao {
 
     public static Connection conectar() {
+
         try {
-            Properties prop = new Properties();
-            prop.load(new FileInputStream("config.properties"));
 
-            String url = prop.getProperty("db.url");
-            String usuario = prop.getProperty("db.user");
-            String senha = prop.getProperty("db.password");
+            String url =
+            "jdbc:mysql://localhost:3306/Supermercado_Acacias";
 
-            return DriverManager.getConnection(url, usuario, senha);
+            String usuario = "root";
+            String senha = "";
+
+            return DriverManager.getConnection(
+                    url,
+                    usuario,
+                    senha);
 
         } catch (Exception e) {
-            System.out.println("Erro: " + e.getMessage());
+
+            System.out.println(e.getMessage());
             return null;
         }
     }

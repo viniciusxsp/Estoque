@@ -5,13 +5,10 @@ import model.Produto;
 
 public class ProdutoService {
 
-    private ProdutoDAO dao =
-            new ProdutoDAO();
+    private ProdutoDAO dao = new ProdutoDAO();
 
-    public void cadastrar(
-            Produto produto) {
+    public void salvar(Produto produto) {
 
-        dao.salvar(produto);
+        dao.cadastrar(produto);
     }
 }
-

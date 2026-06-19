@@ -2,27 +2,20 @@ package model;
 
 public class Produto {
 
-    private int codigo;
+    private int id;
     private String nome;
+    private String tipo;
+    private String marca;
     private int quantidade;
     private double preco;
+    private String validade;
 
-    public Produto() {
+    public int getId() {
+        return id;
     }
 
-    public Produto(int codigo, String nome, int quantidade, double preco) {
-        this.codigo = codigo;
-        this.nome = nome;
-        this.quantidade = quantidade;
-        this.preco = preco;
-    }
-
-    public int getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -31,6 +24,22 @@ public class Produto {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
     }
 
     public int getQuantidade() {
@@ -47,5 +56,13 @@ public class Produto {
 
     public void setPreco(double preco) {
         this.preco = preco;
+    }
+
+    public String getValidade() {
+        return validade;
+    }
+
+    public void setValidade(String validade) {
+        this.validade = validade;
     }
 }

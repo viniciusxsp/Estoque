@@ -4,9 +4,18 @@ import model.Usuario;
 
 public class UsuarioService {
 
-    public boolean autenticar(Usuario usuario) {
+    public boolean autenticar(
+            String login,
+            String senha) {
 
-        return usuario.getLogin().equals("admin")
-            && usuario.getSenha().equals("1234");
+        return login.equals("admin")
+                && senha.equals("1234");
+    }
+
+    public void cadastrar(Usuario usuario) {
+
+        System.out.println(
+                "Usuário cadastrado: "
+                + usuario.getLogin());
     }
 }

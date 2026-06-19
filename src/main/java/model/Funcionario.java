@@ -5,16 +5,9 @@ public class Funcionario {
     private int id;
     private String nome;
     private String cargo;
-    private String telefone;
+    private String cpf;
 
     public Funcionario() {
-    }
-
-    public Funcionario(int id, String nome, String cargo, String telefone) {
-        this.id = id;
-        this.nome = nome;
-        this.cargo = cargo;
-        this.telefone = telefone;
     }
 
     public int getId() {
@@ -41,11 +34,11 @@ public class Funcionario {
         this.cargo = cargo;
     }
 
-    public String getTelefone() {
-        return telefone;
+    public String getCpf() {
+        return cpf;
     }
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 }

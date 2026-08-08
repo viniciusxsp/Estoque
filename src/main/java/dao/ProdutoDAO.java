@@ -121,4 +121,8 @@ public class ProdutoDAO {
             System.out.println(e.getMessage());
         }
     }
+
+    public void cadastrar(String nome, String tipo, String marca, int quantidade, double preco, String validade) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
